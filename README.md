@@ -1,2 +1,5 @@
-# team-status
-A real-time status board for your team.
+# Team Status
+
+> A real-time team status board
+
+
