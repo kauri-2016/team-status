@@ -1,0 +1,24 @@
+{
+  "name": "team-status",
+  "version": "1.0.0",
+  "description": "> A real-time team status board",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "socket.io": "^1.4.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kauri-2016/team-status.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kauri-2016/team-status/issues"
+  },
+  "homepage": "https://github.com/kauri-2016/team-status#readme"
+}
