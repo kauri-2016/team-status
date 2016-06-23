@@ -18,7 +18,12 @@
   - `heroku apps:create NAME_OF_YOUR_APP`
   - This will create an app on Heroku from your terminal, and automatically add it as a remote in your local repo. Run `git remote -v` in your terminal to see this.
 
-2. Deploy to Heroku
+
+2. Check package.json file
+  - Heroku will run the `npm start` command. `npm start` must therefore run the server.js file (not `webpack-dev-server` or any other service). 
+
+
+3. Deploy to Heroku
     - `git push heroku master`
 
 ### Provision database

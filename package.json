@@ -8,7 +8,8 @@
     "watch": "webpack --watch",
     "start": "node server/server",
     "server": "node-inspector --web-port 8888 & node-dev server/server",
-    "test": "ava --watch"
+    "test": "ava --watch",
+    "webpack-server": "webpack-dev-server --hot --inline"
   },
   "ava": {
     "failfast": true,
