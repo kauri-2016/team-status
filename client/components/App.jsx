@@ -4,7 +4,7 @@ export default React.createClass({
   render () {
     return (
       <div>
-        <h1>Things</h1>
+        <h1>Home</h1>
       </div>
     )
   }
