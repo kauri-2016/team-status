@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 import reducer from './reducer'
 import App from './components/App'
 
+
 let store = createStore(
   reducer, compose(
     applyMiddleware(),

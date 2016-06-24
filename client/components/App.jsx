@@ -1,11 +1,8 @@
 import React from 'react'
+import BoardContainer from '../containers/BoardContainer'
 
-export default React.createClass({
-  render () {
-    return (
-      <div>
-        <h1>Home</h1>
-      </div>
-    )
-  }
-})
+export default () => (
+  <div>
+    <BoardContainer/>
+  </div>
+)

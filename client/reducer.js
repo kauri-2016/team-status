@@ -1,10 +1,20 @@
 const INITIAL_STATE = {
-
+  currentTeamMemberId: null,
+  teamMembers: [ {
+    id: 2,
+    name: 'Jane'
+  } ],
+  statuses: [ {
+    teamMember: {
+      id: 2,
+      name: 'Jane',
+    },
+    message: 'yeah ok'
+  }]
 }
 
-const reducer = (state = INITIAL_STATE, action) => {
 
 
+export default (state = INITIAL_STATE, action) => {
+  return state
 }
-
-export default reducer
