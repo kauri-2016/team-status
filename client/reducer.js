@@ -1,5 +1,3 @@
-import { SHOW_LANDING_PAGE } from './actions'
-
 const INITIAL_STATE = {
   currentTeamMemberId: 3,
   teamMembers: [ {
