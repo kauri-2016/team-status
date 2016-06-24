@@ -2,6 +2,25 @@
 
 > A real-time team status board
 
+## Data Structure of Store
+
+```js
+{
+  currentTeamMemberId: 3,
+  teamMembers: [ {
+    id: 2,
+    name: 'Jane'
+  } ],
+  statuses: [ {
+    teamMember: {
+      id: 2,
+      name: 'Jane',
+    },
+    message: 'yeah ok'
+  }]
+}
+```
+
 ## Heroku Deployment Instructions
 
 ### Check the following:
@@ -18,8 +37,17 @@
   - `heroku apps:create NAME_OF_YOUR_APP`
   - This will create an app on Heroku from your terminal, and automatically add it as a remote in your local repo. Run `git remote -v` in your terminal to see this.
 
-2. Deploy to Heroku
+
+2. Check package.json file
+  - Heroku will run the `npm start` command. `npm start` must therefore run the server.js file (not `webpack-dev-server` or any other service).
+
+
+3. Deploy to Heroku
     - `git push heroku master`
+
+### Pushing non-master branch to Heroku
+
+1. If wanting to test Heroku build, it is possible to push a local branch to Heroku. To do this, use `git push heroku <branch name>:master`. This has the effect of having Heroku run your local branch as master. 
 
 ### Provision database
 
