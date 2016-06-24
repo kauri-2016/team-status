@@ -1,12 +1,7 @@
-import {
-  connect
-} from 'react-redux'
+import { connect } from 'react-redux'
 
 import UpdateStatus from '../components/UpdateStatus'
-import {
-  goHome,
-  updateStatus
-} from '../actions'
+import { goHome, updateStatus } from '../actions'
 
 const mapStateToProps = (state) => {
   return {
@@ -25,6 +20,5 @@ const UpdateStatusContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(UpdateStatus)
-
 
 export default UpdateStatusContainer

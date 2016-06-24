@@ -1,7 +1,5 @@
-import {
-  GO_HOME,
-  UPDATE_STATUS
-} from './actions'
+import { GO_HOME, UPDATE_STATUS } from './actions'
+import { SIGN_IN, SIGN_UP } from './actions'
 
 const INITIAL_STATE = {
   currentTeamMemberId: null,
@@ -15,26 +13,26 @@ const INITIAL_STATE = {
   statuses: [{
     teamMember: {
       id: 1,
-      name: 'Joe',
+      name: 'Rich'
     },
-    message: 'yeah ok Joe'
+    message: 'This is a message from Rich'
   }, {
-
     teamMember: {
       id: 2,
-      name: 'Jane',
+      name: 'Jane'
     },
-    message: 'yeah ok Jane'
+    message: 'This is a message from Jane'
   }]
 }
 
-
-const reducer = (state = INITIAL_STATE, action) => {
+export default (state = INITIAL_STATE , action) => {
+  let newState = null
   switch (action.type) {
     case GO_HOME:
       return state
+
     case UPDATE_STATUS:
-      const newState = Object.assign({}, state)
+      newState = Object.assign({}, state)
       newState.statuses = []
       let found = false
       newState.statuses = state.statuses.map((status) => {
@@ -55,20 +53,33 @@ const reducer = (state = INITIAL_STATE, action) => {
         })
       }
       return newState
+
+    case SIGN_IN:
+      return Object.assign({}, state, {
+        currentTeamMemberId: action.id
+      })
+
+    case SIGN_UP:
+      newState = Object.assign({}, state)
+      newState.teamMembers = state.teamMembers.slice()
+
+      newState.teamMembers.push({
+        id: state.teamMembers.length + 1,
+        name: action.teamMemberName
+      })
+      return newState
+
     default:
       return state
   }
-
-
 }
 
-
-function getTeamMemberName(id, teamMembers) {
+function getTeamMemberName (id, teamMembers) {
   const members = teamMembers.filter((member) => {
     return member.id === id
   })
   if (members.length === 1) {
     return members[0].name
   }
-  throw new Error("Team member error")
+  throw new Error('Team member error')
 }

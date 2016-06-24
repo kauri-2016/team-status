@@ -4,17 +4,18 @@ import { Router, Route, Link, hashHistory, IndexRoute } from 'react-router'
 import { createStore, applyMiddleware, compose } from 'redux'
 import { Provider } from 'react-redux'
 
-import reducer from './reducer'
-
 import App from './components/App'
+import reducer from './reducer'
 import Landing from './containers/LandingContainer'
 import Board from './containers/BoardContainer'
-
+import UpdateStatus from './containers/UpdateStatusContainer'
+import SignIn from './containers/SignInContainer'
 
 let store = createStore(
   reducer, compose(
     applyMiddleware(),
     window.devToolsExtension ? window.devToolsExtension() : f => f
+
   )
 )
 
@@ -23,10 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path="/" component={App}>
-          <IndexRoute component={Landing}/>
-          <Route path="signin" component={Landing}/>
-          <Route path="board" component={Board}/>
-          <Route path="updatestatus" component={Landing}/>
+          <IndexRoute component={Landing} />
+          <Route path="signin" component={SignIn} />
+          <Route path="board" component={Board} />
+          <Route path="updatestatus" component={UpdateStatus} />
         </Route>
       </Router>
     </Provider>,
