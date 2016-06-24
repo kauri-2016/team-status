@@ -4,20 +4,20 @@ import {
 } from './actions'
 
 const INITIAL_STATE = {
-  currentTeamMember: {},
+  currentTeamMemberId: null,
 
   statuses: [{
     teamMember: {
       id: 1,
       name: 'Rich'
     },
-    status: "This is a status"
+    message: "This is a message"
   }, {
     teamMember: {
       id: 2,
       name: "teamMember 2"
     },
-    status: "This is a status number 2"
+    message: "This is a message number 2"
   }],
 
   teamMembers: [{
@@ -38,12 +38,19 @@ export default (state = INITIAL_STATE, action) => {
       return Object.assign({}, state, {
         currentTeamMember: action.id
       })
+
     case SIGN_UP:
-      return Object.assign({}, state, {
 
+      const newState = Object.assign({}, state)
+      newState.teamMembers = state.teamMembers.slice()
+
+      newState.teamMembers.push({
+        id: state.teamMembers.length + 1,
+        name: action.teamMemberName
       })
-    default:
+      return newState
 
+    default:
+      return state
   }
-  return state
 }
