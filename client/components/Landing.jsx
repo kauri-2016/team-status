@@ -2,7 +2,7 @@ import React from 'react'
 
 export default (props) => (
   <div>
-    <div className="container">
+    <div className="u-full-width main-container">
       <h1 className="heading">Team Status</h1>
       <div className="view-board">
         <a className="button" href="#">View Board</a>
