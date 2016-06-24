@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-  currentTeamMemberId: 3,
+  currentTeamMemberId: null,
   teamMembers: [ {
     id: 2,
     name: 'Jane'
