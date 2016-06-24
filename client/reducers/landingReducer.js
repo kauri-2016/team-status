@@ -1,10 +1,7 @@
 const INITIAL_STATE = {
-  currentTeamMember: {
-    id: 1,
-    name: "Ricky"
-  }
+  currentTeamMemberId: null
 }
 
-export default (state = INITIAL_STATE, action) {
+export default (state = INITIAL_STATE, action) => {
   return state
 }

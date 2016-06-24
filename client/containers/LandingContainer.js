@@ -3,6 +3,8 @@ import Landing from '../components/Landing'
 
 const mapStateToProps = (state) => {
   return {
-    currentTeamMember: state.currentTeamMember
+    currentTeamMemberId: state.currentTeamMemberId
   }
 }
+
+export default connect(mapStateToProps)(Landing)
