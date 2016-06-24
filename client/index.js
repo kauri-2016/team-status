@@ -17,6 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
       <Router history={hashHistory}>
         <Route path="/" component={App}>
           <IndexRoute component={Landing}/>
+          <Route path="signin" component={Landing}/>
+          <Route path="board" component={Landing}/>
+          <Route path="updatestatus" component={Landing}/>
         </Route>
       </Router>
     </Provider>,
