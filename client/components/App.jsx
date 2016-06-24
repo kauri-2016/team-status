@@ -1,10 +1,14 @@
 import React from 'react'
 
+import BoardContainer from '../containers/BoardContainer'
 import SignInContainer from '../containers/SignInContainer'
 
-export default () => {
-    <div>
-      <h1>Landing Page</h1>
-      <SignInContainer />
-    </div>
-}
+export default React.createClass({
+  render () {
+    return (
+      <div>
+        {this.props.children}
+      </div>
+    )
+  }
+})

@@ -1,11 +1,13 @@
 import React from 'react'
 import { render } from 'react-dom'
+import { Router, Route, Link, hashHistory, IndexRoute } from 'react-router'
 import { createStore, applyMiddleware, compose } from 'redux'
 import { Provider } from 'react-redux'
 
-import reducer from './reducer'
 import App from './components/App'
 import reducer from './reducer'
+import Landing from './containers/LandingContainer'
+import Board from './containers/BoardContainer'
 
 let store = createStore(
   reducer, compose(
@@ -18,8 +20,15 @@ let store = createStore(
 document.addEventListener('DOMContentLoaded', () => {
   render(
     <Provider store={store}>
-      <App />
+      <Router history={hashHistory}>
+        <Route path="/" component={App}>
+          <IndexRoute component={Landing} />
+          <Route path="signin" component={Landing} />
+          <Route path="board" component={Board} />
+          <Route path="updatestatus" component={Landing} />
+        </Route>
+      </Router>
     </Provider>,
     document.getElementById('app')
   )
-)
+})
