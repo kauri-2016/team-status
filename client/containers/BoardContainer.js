@@ -2,7 +2,7 @@
 import { connect } from 'react-redux'
 
 import Board from '../components/Board'
-import { showLandingPage } from '../actions'
+
 
 const mapStateToProps = (state) => {
   return {
