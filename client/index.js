@@ -1,6 +1,8 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Router, Route, Link, hashHistory, IndexRoute } from 'react-router'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 
 import App from './components/App'
 import Landing from './components/Landing'
