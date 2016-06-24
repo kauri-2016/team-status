@@ -8,6 +8,8 @@ import reducer from './reducer'
 
 import App from './components/App'
 import Landing from './containers/LandingContainer'
+import Board from './containers/BoardContainer'
+
 
 let store = createStore(
   reducer, compose(
@@ -23,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <Route path="/" component={App}>
           <IndexRoute component={Landing}/>
           <Route path="signin" component={Landing}/>
-          <Route path="board" component={Landing}/>
+          <Route path="board" component={Board}/>
           <Route path="updatestatus" component={Landing}/>
         </Route>
       </Router>
