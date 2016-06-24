@@ -1,6 +1,8 @@
 import {
   GO_HOME,
-  UPDATE_STATUS
+  UPDATE_STATUS,
+  SIGN_IN,
+  SIGN_UP
 } from './actions'
 
 const INITIAL_STATE = {
@@ -19,10 +21,9 @@ const INITIAL_STATE = {
     },
     message: 'yeah ok Joe'
   }, {
-
     teamMember: {
       id: 2,
-      name: 'Jane',
+      name: 'teamMember 2'
     },
     message: 'yeah ok Jane'
   }]
@@ -31,8 +32,24 @@ const INITIAL_STATE = {
 
 const reducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    case SIGN_IN:
+      return Object.assign({}, state, {
+        currentTeamMemberId: action.id
+      })
+
+    case SIGN_UP:
+      const newState = Object.assign({}, state)
+      newState.teamMembers = state.teamMembers.slice()
+
+      newState.teamMembers.push({
+        id: state.teamMembers.length + 1,
+        name: action.teamMemberName
+      })
+      return newState
+
     case GO_HOME:
       return state
+
     case UPDATE_STATUS:
       const newState = Object.assign({}, state)
       newState.statuses = []
@@ -55,13 +72,11 @@ const reducer = (state = INITIAL_STATE, action) => {
         })
       }
       return newState
+
     default:
       return state
   }
-
-
 }
-
 
 function getTeamMemberName(id, teamMembers) {
   const members = teamMembers.filter((member) => {
