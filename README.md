@@ -2,6 +2,28 @@
 
 > A real-time team status board
 
+## Data Structure of Store
+
+```js
+{
+  currentMember: {
+    id: 2,
+    name: 'Jane',
+  },
+  teamMembers: [ {
+    id: 2,
+    name: 'Jane'
+  } ],
+  statuses: [ {
+    teamMember: {
+      id: 2,
+      name: 'Jane',
+    },
+    status: 'yeah ok'
+  }]
+}
+```
+
 ## Heroku Deployment Instructions
 
 ### Check the following:
