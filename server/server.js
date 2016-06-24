@@ -12,6 +12,10 @@ app.use(cors({
 }))
 app.use(express.static(path.join(__dirname, 'static')))
 
+app.post('/v1/statuses/:id', function (req, res) {
+  res.send({ id: req.params.id })
+})
+
 app.listen(PORT, function () {
   console.log('Listening on port', PORT)
 })

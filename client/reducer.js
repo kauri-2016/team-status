@@ -36,7 +36,7 @@ export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case SIGN_IN:
       return Object.assign({}, state, {
-        currentTeamMember: action.id
+        currentTeamMemberId: action.id
       })
 
     case SIGN_UP:
