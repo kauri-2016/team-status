@@ -8,8 +8,8 @@ export default (props) => {
         <ul>
           {props.teamMembers.map((teamMember) => {
             return <a href="" onClick={() => {
-                    props.signIn
-                })}><li> {teamMember.name}</li></a>
+                    props.signIn(teamMember.id)
+                }}><li> {teamMember.name}</li></a>
           })}
         </ul>
 
