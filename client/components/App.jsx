@@ -1,13 +1,11 @@
 import React from 'react'
-import UpdateStatusContainer from '../containers/UpdateStatusContainer'
 
-export default React.createClass({
-  render () {
-    return (
-      <div>
-        <h1>Home</h1>
-        <UpdateStatusContainer />
-      </div>
-    )
-  }
-})
+import UpdateStatusContainer from '../containers/UpdateStatusContainer'
+import BoardContainer from '../containers/BoardContainer'
+
+export default () => (
+  <div>
+    <BoardContainer/>
+    <UpdateStatusContainer />
+  </div>
+)

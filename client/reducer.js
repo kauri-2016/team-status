@@ -4,7 +4,7 @@ import {
 } from './actions'
 
 const INITIAL_STATE = {
-  currentTeamMemberId: 1,
+  currentTeamMemberId: null,
   teamMembers: [{
     id: 1,
     name: 'Joe'
@@ -19,6 +19,7 @@ const INITIAL_STATE = {
     },
     message: 'yeah ok Joe'
   }, {
+
     teamMember: {
       id: 2,
       name: 'Jane',
@@ -57,7 +58,9 @@ const reducer = (state = INITIAL_STATE, action) => {
       return state
   }
 
+
 }
+
 
 function getTeamMemberName(id, teamMembers) {
   const members = teamMembers.filter((member) => {
@@ -68,5 +71,3 @@ function getTeamMemberName(id, teamMembers) {
   }
   throw new Error("Team member error")
 }
-
-export default reducer
