@@ -1,8 +1,12 @@
 import React from 'react'
 import BoardContainer from '../containers/BoardContainer'
 
-export default () => (
-  <div>
-    <BoardContainer/>
-  </div>
-)
+export default React.createClass({
+  render () {
+    return (
+      <div>
+        {this.props.children}
+      </div>
+    )
+  }
+})
