@@ -6,10 +6,7 @@
 
 ```js
 {
-  currentMember: {
-    id: 2,
-    name: 'Jane',
-  },
+  currentTeamMemberId: 3,
   teamMembers: [ {
     id: 2,
     name: 'Jane'
@@ -19,7 +16,7 @@
       id: 2,
       name: 'Jane',
     },
-    status: 'yeah ok'
+    message: 'yeah ok'
   }]
 }
 ```
