@@ -10,5 +10,4 @@ html, body {
 .view-board, .get-status {
   display: flex;
   flex-direction: column;
-  padding:
 }

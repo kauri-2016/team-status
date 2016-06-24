@@ -4,7 +4,7 @@ import { Router, Route, Link, hashHistory, IndexRoute } from 'react-router'
 import { createStore, applyMiddleware, compose } from 'redux'
 import { Provider } from 'react-redux'
 
-import reducer from './reducers/landingReducer'
+import reducer from './reducer'
 
 import App from './components/App'
 import Landing from './containers/LandingContainer'
