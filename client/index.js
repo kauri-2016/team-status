@@ -1,8 +1,9 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { Router, Route, Link, hashHistory, IndexRoute } from 'react-router'
+import { Router, Route, hashHistory, IndexRoute } from 'react-router'
 import { createStore, applyMiddleware, compose } from 'redux'
 import { Provider } from 'react-redux'
+import thunk from 'redux-thunk';
 
 import App from './components/App'
 import reducer from './reducer'
@@ -13,9 +14,8 @@ import SignIn from './containers/SignInContainer'
 
 let store = createStore(
   reducer, compose(
-    applyMiddleware(),
+    applyMiddleware(thunk),
     window.devToolsExtension ? window.devToolsExtension() : f => f
-
   )
 )
 

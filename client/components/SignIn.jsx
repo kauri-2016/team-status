@@ -1,8 +1,8 @@
 import React from 'react'
+import {Link} from 'react-router'
 
 export default (props) => {
     let textInput
-    console.log('text', textInput);
     return (
       <div>
         <h1>Sign In</h1>
@@ -23,7 +23,7 @@ export default (props) => {
           }}}>
              <input ref={input => { textInput = input } } />
              <button type='submit'>Sign Up</button>
-             <button>Cancel</button>
+             <Link to={"/"}><button>Cancel</button></Link>
          </form>
       </div>
     )

@@ -10,10 +10,9 @@ export function goHome () {
   }
 }
 
-export function updateStatus (teamMemberId, statusMessage) {
+export function updateStatus (statusMessage) {
   return {
     type: UPDATE_STATUS,
-    teamMemberId: teamMemberId,
     statusMessage: statusMessage
   }
 }

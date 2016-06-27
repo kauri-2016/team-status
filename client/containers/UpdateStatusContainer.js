@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     goHome: () => dispatch(goHome()),
-    updateStatus: (teamMemberId, statusMessage) => dispatch(updateStatus(teamMemberId, statusMessage))
+    updateStatus: (statusMessage) => dispatch(updateStatus(statusMessage))
   }
 }
 

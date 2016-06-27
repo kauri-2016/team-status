@@ -32,26 +32,18 @@ export default (state = INITIAL_STATE , action) => {
       return state
 
     case UPDATE_STATUS:
+      console.log(action)
       newState = Object.assign({}, state)
-      newState.statuses = []
-      let found = false
-      newState.statuses = state.statuses.map((status) => {
-        if (status.teamMember.id === state.currentTeamMemberId) {
-          status.message = action.statusMessage
-          found = true
-          return status
-        }
-        return status
+      newState.statuses = state.statuses.filter((status) => {
+        return (status.teamMember.id !== state.currentTeamMemberId)
       })
-      if (!found) { // set first status message
-        newState.statuses.push({
-          teamMember: {
-            id: action.teamMemberId,
-            name: getTeamMemberName(action.teamMemberId, state.teamMembers)
-          },
-          message: action.statusMessage
-        })
-      }
+      newState.statuses.push({
+        teamMember: {
+          id: state.currentTeamMemberId,
+          name: getTeamMemberName(state.currentTeamMemberId, state.teamMembers)
+        },
+        message: action.statusMessage
+      })
       return newState
 
     case SIGN_IN:

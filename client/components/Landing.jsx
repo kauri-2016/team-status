@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router'
 
-export default (props) => (
+export default (props) => {
+  return (
   <div>
     <div className="u-full-width main-container">
       <h1 className="heading">Team Status</h1>
@@ -13,4 +14,4 @@ export default (props) => (
         </div>
     </div>
   </div>
-)
+)}
